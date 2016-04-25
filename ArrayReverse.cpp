@@ -18,13 +18,13 @@ int main() {
     int evenArray[] = {0, 1, 2, 3, 4};
     int arraySize = ARRAY_SIZE(evenArray);
 
-    cout << "Even array:" << endl;
+    cout << "Array even size:" << endl;
     process(evenArray, arraySize);
 
     int oddArray[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     arraySize = ARRAY_SIZE(oddArray);
 
-    cout << "\nOdd array:" << endl;
+    cout << "\nArray odd size:" << endl;
     process(oddArray, arraySize);
 
     return 0;
