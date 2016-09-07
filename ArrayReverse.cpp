@@ -1,6 +1,6 @@
 #include<iostream>
 // DO NOT USE THIS IN PRODUCTION
-#if !defined(ARRAY_SIZE)
+#ifndef ARRAY_SIZE
     #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
 #endif
 using namespace std;
@@ -15,17 +15,17 @@ void reverseArray(int*, int);
  * @return application execution status
  */
 int main() {
-    int evenArray[] = {0, 1, 2, 3, 4};
-    int arraySize = ARRAY_SIZE(evenArray);
+    int oddArray[] = {0, 1, 2, 3, 4};
+    int arraySize = ARRAY_SIZE(oddArray);
 
-    cout << "Array even size:" << endl;
-    process(evenArray, arraySize);
-
-    int oddArray[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    arraySize = ARRAY_SIZE(oddArray);
-
-    cout << "\nArray odd size:" << endl;
+    cout << "Array odd size:" << endl;
     process(oddArray, arraySize);
+
+    int evenArray[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    arraySize = ARRAY_SIZE(evenArray);
+
+    cout << "\nArray even size:" << endl;
+    process(evenArray, arraySize);
 
     return 0;
 }
@@ -38,7 +38,7 @@ int main() {
  */
 void printArray(int *array, int size) {
     for (int i = 0; i < size; i++)
-        cout << *((array + i)) << " ";
+        cout << array[i] << " ";
     cout<<endl;
 }
 
