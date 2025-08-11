@@ -1,4 +1,5 @@
 #include<iostream>
+#include<utility>
 // DO NOT USE THIS IN PRODUCTION
 #ifndef ARRAY_SIZE
     #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
@@ -60,9 +61,9 @@ void process(int *array, int arraySize) {
  * @param array the array which elements will be reversed
  * @param arraySize the size of the array
  */
-void reverseArray(int* array, int arraySize) {   
-    for (int i = 0; i < (arraySize / 2); i++) {        
-        int last = arraySize - 1 - i;        
-        array[i] = array[i]^array[last]^(array[last] = array[i]);       
+void reverseArray(int* array, int arraySize) {
+    for (int i = 0; i < (arraySize / 2); i++) {
+        int last = arraySize - 1 - i;
+        swap(array[i], array[last]);
     }
 }
